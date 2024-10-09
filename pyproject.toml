@@ -8,6 +8,7 @@ description = "An edge-maxxing model submission for the 4090 newdream contest"
 requires-python = ">=3.10,<3.11"
 version = "1.0.0"
 dependencies = [
+    "diffusers @ git+https://github.com/Davidbqlw/diffusers",
     "accelerate==0.31.0",
     "numpy==1.26.4",
     "xformers==0.0.25.post1",
@@ -17,7 +18,6 @@ dependencies = [
     "omegaconf==2.3.0",
     "torch==2.2.2",
     "torchvision==0.17.2",
-    "diffusers @ git+https://github.com/Davidbqlw/diffusers",
     "edge-maxxing-pipelines @ git+https://github.com/womboai/edge-maxxing#subdirectory=pipelines",
 ]
 
