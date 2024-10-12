@@ -1039,24 +1039,6 @@ class StableDiffusionXLPipeline(
         original_size = original_size or (height, width)
         target_size = target_size or (height, width)
 
-        # 1. Check inputs. Raise error if not correct
-        self.check_inputs(
-            prompt,
-            prompt_2,
-            height,
-            width,
-            callback_steps,
-            negative_prompt,
-            negative_prompt_2,
-            prompt_embeds,
-            negative_prompt_embeds,
-            pooled_prompt_embeds,
-            negative_pooled_prompt_embeds,
-            ip_adapter_image,
-            ip_adapter_image_embeds,
-            callback_on_step_end_tensor_inputs,
-        )
-
         self._guidance_scale = guidance_scale
         self._guidance_rescale = guidance_rescale
         self._clip_skip = clip_skip
@@ -1352,5 +1334,5 @@ def infer(request: TextToImageRequest, pipeline: StableDiffusionXLPipeline) -> I
         width=request.width,
         height=request.height,
         generator=generator,
-        num_inference_steps=8,
+        num_inference_steps=9,
     ).images[0]
